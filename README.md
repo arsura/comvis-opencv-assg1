@@ -12,7 +12,9 @@
 ```
 
 **Linux**
+
 [Installation Guide for Linux](https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html)
+
 ``` 
 cd comvis-opencv-assg1
 ./run.sh
