@@ -2,8 +2,8 @@
 
 **Required for Windows**
 ``` 
-- Visual Studio 2017
-- [OpenCV 3.4.3](https://opencv.org/releases.html)
+Visual Studio 2017
+[OpenCV 3.4.3](https://opencv.org/releases.html)
 ``` 
 
 ```
