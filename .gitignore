@@ -1,6 +1,7 @@
 .vs
 x64/
 comvis-opencv-assg1/x64/
+comvis-opencv-assg1/bin/
 
 # Prerequisites
 *.d
