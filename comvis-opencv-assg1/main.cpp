@@ -1,20 +1,24 @@
-#include <iostream>
-#include <opencv2/opencv.hpp>
+#include "opencv2/opencv.hpp"
 
-int main(int argc, char **argv)
+int main(int, char **)
 {
-	cv::Mat img = cv::imread("resource/img/opencv_logo.png");
+	cv::VideoCapture cap(0); // open the default camera
+	
+	if (!cap.isOpened()) {
+		return -1; // check if we succeeded
+	} 
 
-	if (img.empty()) {
-		std::cout << "failed to open opencv_logo.png" << std::endl;
+	cv::Mat edges;
+	cv::namedWindow("edges", 1);
+	for (;;)
+	{
+		cv::Mat frame;
+		cap >> frame; // get a new frame from camera
+		cv::imshow("edges", frame);
+		if (cv::waitKey(30) >= 0)
+			break;
 	}
-	else {
-		std::cout << "opencv_logo.png loaded OK" << std::endl;
-	}
 
-	cv::namedWindow("opencv", cv::WINDOW_AUTOSIZE);
-	cv::imshow("opencv", img);
-	cv::waitKey(0);
-
+	// the camera will be deinitialized automatically in VideoCapture destructor
 	return 0;
 }
