@@ -9,7 +9,7 @@ int main(int, char **)
 	} 
 
 	cv::Mat edges;
-	cv::namedWindow("Color", 1);
+	cv::namedWindow("Color", cv::WINDOW_AUTOSIZE);
 	for (;;)
 	{
 		cv::Mat frame;
