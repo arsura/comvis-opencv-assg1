@@ -1,12 +1,13 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
+
 using namespace cv;
 using namespace std;
 
 int main(int argc, char** argv)
 {
     // Load BGR image
-    Mat3b bgr = imread("resource/img/color_pencil.jpg");
+    Mat3b bgr = imread("resource/img/gray_shade.png");
 	Mat3b rgb;
 
     if (bgr.empty()) 
@@ -54,16 +55,7 @@ int main(int argc, char** argv)
     {
         Mat mask;
 
-
         inRange(hsv, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), mask); //Threshold the image
-
-		for (int i = 0; i < mask.cols; i++) {
-			for (int j = 0; j < mask.rows; j++) {
-				if (mask.at<uchar>(j, i) == 0) {
-					// cout << j << " " << i << endl << endl;
-				}
-			}
-		}
 
         //morphological opening (remove small objects from the foreground)
         morphologyEx(mask, mask, MORPH_OPEN, kernel);
@@ -82,3 +74,47 @@ int main(int argc, char** argv)
     }
     return 0;
 }
+
+// White
+//	- lowHSV	(0, 0, 80)
+//	- highHSV	(180, 90, 255)
+
+// Black
+//	- lowHSV	(0, 0, 0)
+//	- highHSV	(180, 255, 80)
+
+// Gray
+//	- lowHSV	(0, 0, 50)
+//	- highHSV	(180, 255, 255)
+
+// Yellow
+//	- lowHSV	(20, 130, 130)
+//	- highHSV	(50, 255, 255)
+
+// Red
+//	- lowHSV	(0, 130, 70)
+//	- highHSV	(9, 255, 130)
+
+// Blue
+//	- lowHSV	(90, 80, 90)
+//	- highHSV	(110, 240, 255)
+
+// Green
+//	- lowHSV	(50, 70, 30)
+//	- highHSV	(90, 255, 255)
+
+// Brown
+//	- lowHSV	(0, 50, 60)
+//	- highHSV	(180, 170, 160)
+
+// Pink
+//	- lowHSV	(130, 70, 180)
+//	- highHSV	(170, 225, 255)
+
+// Orange
+//	- lowHSV	(5, 130, 180)
+//	- highHSV	(15, 255, 255)
+
+// Purple
+//	- lowHSV	(90, 90, 90)
+//	- highHSV	(150, 255, 255)
