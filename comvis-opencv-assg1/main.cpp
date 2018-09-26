@@ -1,24 +1,8 @@
-#include "opencv2/imgproc.hpp"
-#include "opencv2/highgui.hpp"
-#include <iostream>
-#include <map>
+#include "HSV.hpp"
 
-std::map< std::string, std::vector<cv::Scalar> > HSV {
-	// lowHSV, highHSV, RGB
-	{
-		"Blue", { cv::Scalar(90, 80, 90), cv::Scalar(110, 240, 255), cv::Scalar(255, 0, 0) }
-	},
-	{
-		"Yellow", { cv::Scalar(20, 130, 130), cv::Scalar(50, 255, 255), cv::Scalar(0, 255, 255) }
-	},
-	{
-		"Orange", { cv::Scalar(5, 130, 180), cv::Scalar(15, 255, 255), cv::Scalar(0, 165, 255) }
-	}
-};
-
-void foo(cv::Mat frame, 
-		 cv::Mat frame_HSV, 
-		 cv::Mat frame_threshold, 
+void foo(cv::Mat &frame, 
+		 cv::Mat &frame_HSV, 
+		 cv::Mat &frame_threshold, 
 		 std::string colorName,
 		 cv::Scalar lowHSV,
 		 cv::Scalar highHSV,
@@ -37,6 +21,10 @@ void foo(cv::Mat frame,
 		cv::Moments m = cv::moments(frame_threshold, false);
 		cv::Point p(m.m10 / m.m00, m.m01 / m.m00);
 		cv::putText(frame, colorName, p, 1, 2.0, BGR, 2);
+		cv::imshow(colorName, frame_threshold);
+	}
+	else {
+		cv::destroyWindow(colorName);
 	}
 }
 
@@ -46,10 +34,10 @@ int main(int argc, char* argv[])
 	cv::VideoCapture cap(argc > 1 ? atoi(argv[1]) : 0);
 
 	cv::namedWindow("Original", cv::WINDOW_AUTOSIZE);
-	// cv::namedWindow("BlueHSV", cv::WINDOW_AUTOSIZE);
 
 	for (auto& m : HSV) {
 		std::cout << m.first << " lowHSV=" << m.second[0] << " highHSV=" << m.second[1] << " BGR=" << m.second[2] << std::endl;
+		cv::namedWindow(m.first, cv::WINDOW_AUTOSIZE);
 	}
 	
 	cv::Mat frame, frame_HSV, frame_threshold;
@@ -57,7 +45,7 @@ int main(int argc, char* argv[])
 	while (true) {
 
 		cap >> frame;
-		if (frame.empty()){
+		if (frame.empty()) {
 			break;
 		}
 		// Convert from BGR to HSV colorspace

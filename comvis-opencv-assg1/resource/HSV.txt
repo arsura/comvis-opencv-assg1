@@ -6,7 +6,7 @@ Black
 - lowHSV	(0, 0, 0)
 - highHSV	(180, 255, 80)
 
-Gray
+Grey
 - lowHSV	(0, 0, 50)
 - highHSV	(180, 255, 255)
 
