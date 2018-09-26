@@ -16,7 +16,7 @@ std::map< std::string, std::vector<cv::Scalar> > HSV{
 		"Orange", { cv::Scalar(5, 130, 180), cv::Scalar(15, 255, 255), cv::Scalar(0, 165, 255) }
 	},
 	{
-		"Yellow", { cv::Scalar(30, 130, 130), cv::Scalar(60, 255, 255), cv::Scalar(0, 255, 255) }
+		"Yellow", { cv::Scalar(20, 130, 130), cv::Scalar(50, 255, 255), cv::Scalar(0, 255, 255) }
 	},
 	{
 		"Green", { cv::Scalar(50, 70, 30), cv::Scalar(90, 255, 255), cv::Scalar(0, 255, 0) }
