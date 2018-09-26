@@ -7,7 +7,7 @@
 std::map< std::string, std::vector<cv::Scalar> > HSV{
 	// lowHSV, highHSV, RGB
 	{
-		"Red", { cv::Scalar(0, 130, 70), cv::Scalar(9, 255, 130), cv::Scalar(0, 0, 255) }
+		"Red", { cv::Scalar(0, 120, 140), cv::Scalar(10, 255, 255), cv::Scalar(0, 0, 0) }
 	},
 	{
 		"Brown", { cv::Scalar(0, 50, 60), cv::Scalar(180, 170, 160), cv::Scalar(19, 69, 139) }

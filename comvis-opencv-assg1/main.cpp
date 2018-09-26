@@ -17,7 +17,7 @@ void foo(cv::Mat &frame,
 
 	nonZero = cv::countNonZero(frame_threshold);
 	// std::cout << nonZero << std::endl;
-	if (nonZero > 30000) {
+	if (nonZero > 10000) {
 		cv::Moments m = cv::moments(frame_threshold, false);
 		cv::Point p(m.m10 / m.m00, m.m01 / m.m00);
 		cv::putText(frame, colorName, p, 1, 2.0, BGR, 2);
