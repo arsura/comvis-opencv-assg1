@@ -7,36 +7,36 @@
 std::map< std::string, std::vector<cv::Scalar> > HSV{
 	// lowHSV, highHSV, RGB
 	{
-		"Red", { cv::Scalar(0, 120, 140), cv::Scalar(10, 255, 255), cv::Scalar(0, 0, 0) }
+		"Red", { cv::Scalar(125, 105, 110), cv::Scalar(180, 255, 255), cv::Scalar(0, 0, 255) }
 	},
 	{
-		"Brown", { cv::Scalar(0, 50, 60), cv::Scalar(180, 170, 160), cv::Scalar(19, 69, 139) }
+		"Brown", { cv::Scalar(0, 45, 0), cv::Scalar(15, 255, 125), cv::Scalar(19, 69, 139) }
 	},
 	{
-		"Orange", { cv::Scalar(5, 130, 180), cv::Scalar(15, 255, 255), cv::Scalar(0, 165, 255) }
+		"Orange", { cv::Scalar(0, 125, 205), cv::Scalar(15, 255, 255), cv::Scalar(0, 165, 255) }
 	},
 	{
 		"Yellow", { cv::Scalar(20, 130, 130), cv::Scalar(50, 255, 255), cv::Scalar(0, 255, 255) }
 	},
 	{
-		"Green", { cv::Scalar(50, 70, 30), cv::Scalar(90, 255, 255), cv::Scalar(0, 255, 0) }
+		"Green", { cv::Scalar(50, 190, 40), cv::Scalar(90, 255, 255), cv::Scalar(0, 255, 0) }
 	},
 	{
-		"Blue", { cv::Scalar(90, 80, 90), cv::Scalar(120, 240, 255), cv::Scalar(255, 0, 0) }
+		"Blue", { cv::Scalar(90, 80, 90), cv::Scalar(120, 255, 255), cv::Scalar(255, 0, 0) }
 	},
 	{
-		"Purple", { cv::Scalar(130, 90, 90), cv::Scalar(140, 255, 255), cv::Scalar(204, 50, 153) }
+		"Purple", { cv::Scalar(120, 5, 0), cv::Scalar(130, 255, 255), cv::Scalar(204, 50, 153) }
 	},
 	{
-		"Pink", { cv::Scalar(150, 110, 120), cv::Scalar(180, 255, 255), cv::Scalar(180, 105, 255) }
+		"Pink", { cv::Scalar(160, 65, 120), cv::Scalar(172, 255, 255), cv::Scalar(180, 105, 255) }
 	},
-	//{
-	//	"Grey", { cv::Scalar(0, 0, 50), cv::Scalar(180, 255, 255), cv::Scalar(128, 128, 128) }
-	//},
-	//{
-	//	"Black", { cv::Scalar(0, 0, 0), cv::Scalar(180, 255, 80), cv::Scalar(255, 255, 255) }
-	//},
-	//{
-	//	"White", { cv::Scalar(0, 0, 80), cv::Scalar(180, 90, 255), cv::Scalar(0, 0, 0) }
-	//},
+	{
+		"Grey", { cv::Scalar(0, 0, 50), cv::Scalar(180, 50, 100), cv::Scalar(128, 128, 128) }
+	},
+	{
+		"Black", { cv::Scalar(0, 0, 0), cv::Scalar(180, 255, 40), cv::Scalar(0, 0, 0) }
+	},
+	{
+		"White", { cv::Scalar(0, 0, 200), cv::Scalar(180, 40, 255), cv::Scalar(255, 255, 255) }
+	},
 };
